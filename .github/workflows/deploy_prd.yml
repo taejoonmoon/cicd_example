@@ -1,0 +1,20 @@
+name: deploy-production
+
+on: workflow_dispatch
+  # workflow_dispatch:
+      # inputs:
+      #   version:
+      #     description: 'The version to deploy'
+      #     required: true
+
+jobs:
+  DeployProd:
+    name: Deploy to Production 
+    #needs: [DeployStaging]
+    runs-on: ubuntu-latest
+    environment: 
+      name: Production
+      url: 'http://www.example.com'
+    steps:
+      - name: Deploy
+        run: echo I am deploying! 
